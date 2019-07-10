@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.crmsbeta.widget.AccordionView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_each_accordion"
+    android:orientation="vertical"
+    app:header_layout_fold_button_id="@id/foldButton"
+    app:header_layout_id="@layout/layout_header_accordian"
+    app:header_layout_label_id="@id/tvHeaderTitle"
+    app:section_bottom="@layout/accordion_footer"
+    app:section_container="@layout/accordion_section"
+    app:section_container_parent="@id/section_content"
+    app:section_headers="@array/accordion_sections"
+    tools:showIn="@layout/fragment_case">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        // case
+
+        <include layout="@layout/layout_expand_case" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/roboto"
+            android:text="Attachment / Comment Issue Date (DDMMYYYY) *"
+            android:textColor="#8a000000"
+            android:textSize="@dimen/_14ssp" />
+
+        <!--date-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_input"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_8sdp"
+                android:text="09/12/2018"
+                android:textColor="#de000000" />
+
+            <ImageView
+                android:id="@+id/btnDate"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:background="@drawable/bg_icon_input"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_date_range_20dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/roboto"
+            android:text="Attachment / Comment Type *"
+            android:textColor="#8a000000"
+            android:textSize="@dimen/_14ssp" />
+
+        <!--item_one-->
+        <LinearLayout
+            android:id="@+id/containerAttachmentCommentType"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_input"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTitlePopupMenu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_8sdp"
+                android:text="Incoming Correspondence"
+                android:textColor="#de000000" />
+
+            <ImageView
+                android:id="@+id/btnAttachmentCommentType"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:background="@drawable/bg_icon_input"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_keyboard_arrow_down_item_22dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/roboto"
+            android:text="Remarks"
+            android:textColor="#8a000000"
+            android:textSize="@dimen/_14ssp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_edittext_textarea"
+            android:gravity="top"
+            android:lines="5"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingTop="@dimen/_8sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="@font/roboto"
+            android:text="* required field"
+            android:textSize="@dimen/_12ssp" />
+
+    </LinearLayout>
+
+
+</com.example.crmsbeta.widget.AccordionView>

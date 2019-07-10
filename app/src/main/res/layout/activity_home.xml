@@ -10,16 +10,16 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/bg_home_gradient"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/bg_home_gradient"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -28,8 +28,7 @@
 
                 <include
                     android:id="@+id/home_toolbar"
-                    layout="@layout/toolbar_home"
-                    />
+                    layout="@layout/toolbar_home" />
 
                 <ImageView
                     android:id="@+id/imageView"
@@ -60,11 +59,11 @@
 
 
                         <ImageView
-                            android:layout_marginTop="12dp"
-                            android:layout_marginLeft="12dp"
-                            android:src="@drawable/ic_search"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/ic_search" />
 
 
                     </LinearLayout>
@@ -74,10 +73,10 @@
                         android:layout_height="45dp">
 
                         <EditText
-                            android:inputType="text"
-                            android:background="@drawable/et_search"
                             android:layout_width="match_parent"
-                            android:layout_height="45dp" />
+                            android:layout_height="45dp"
+                            android:background="@drawable/et_search"
+                            android:inputType="text" />
 
                     </LinearLayout>
 
@@ -98,9 +97,9 @@
 
 
                     <LinearLayout
-                        android:layout_marginBottom="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -111,27 +110,28 @@
 
 
                             <LinearLayout
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:orientation="vertical"
-                                android:layout_marginEnd="6dp"
+                                android:id="@+id/containerCaseHandling"
                                 android:layout_width="match_parent"
                                 android:layout_height="170dp"
-                                android:background="#03A0C0">
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="6dp"
+                                android:background="#03A0C0"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
 
                                 <ImageView
-                                    android:layout_marginBottom="12dp"
-                                    android:src="@drawable/icon_case_handling"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_case_handling" />
 
                                 <TextView
-                                    android:text="Case Handling"
-                                    android:textSize="18sp"
-                                    android:textColor="#FFF"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:text="Case Handling"
+                                    android:textColor="#FFF"
+                                    android:textSize="18sp" />
 
 
                             </LinearLayout>
@@ -146,27 +146,27 @@
 
 
                             <LinearLayout
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:orientation="vertical"
-                                android:layout_marginStart="6dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="170dp"
-                                android:background="#03A0C0">
+                                android:layout_gravity="center"
+                                android:layout_marginStart="6dp"
+                                android:background="#03A0C0"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
 
                                 <ImageView
-                                    android:layout_marginBottom="12dp"
-                                    android:src="@drawable/icon_case_search"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_case_search" />
 
                                 <TextView
-                                    android:text="Case Search"
-                                    android:textSize="18sp"
-                                    android:textColor="#FFF"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:text="Case Search"
+                                    android:textColor="#FFF"
+                                    android:textSize="18sp" />
 
 
                             </LinearLayout>
@@ -177,9 +177,9 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginBottom="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -190,27 +190,27 @@
 
 
                             <LinearLayout
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:orientation="vertical"
-                                android:layout_marginEnd="6dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="170dp"
-                                android:background="#03A0C0">
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="6dp"
+                                android:background="#03A0C0"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
 
                                 <ImageView
-                                    android:layout_marginBottom="12dp"
-                                    android:src="@drawable/icon_statistic_input"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_statistic_input" />
 
                                 <TextView
-                                    android:text="Statistic Input"
-                                    android:textSize="18sp"
-                                    android:textColor="#FFF"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:text="Statistic Input"
+                                    android:textColor="#FFF"
+                                    android:textSize="18sp" />
 
 
                             </LinearLayout>
@@ -225,28 +225,28 @@
 
 
                             <LinearLayout
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:orientation="vertical"
-                                android:layout_marginStart="6dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="170dp"
-                                android:background="#03A0C0">
+                                android:layout_gravity="center"
+                                android:layout_marginStart="6dp"
+                                android:background="#03A0C0"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
 
                                 <ImageView
-                                    android:layout_marginBottom="12dp"
-                                    android:src="@drawable/icon_office_admin_active"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_office_admin_active" />
 
                                 <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:text="Office\nAdministration"
                                     android:textAlignment="center"
-                                    android:textSize="18sp"
                                     android:textColor="#FFF"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:textSize="18sp" />
 
 
                             </LinearLayout>
@@ -257,9 +257,9 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginBottom="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -270,28 +270,28 @@
 
 
                             <LinearLayout
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:orientation="vertical"
-                                android:layout_marginEnd="6dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="170dp"
-                                android:background="#03A0C0">
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="6dp"
+                                android:background="#03A0C0"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
 
                                 <ImageView
-                                    android:layout_marginBottom="12dp"
-                                    android:src="@drawable/icon_user_management"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_user_management" />
 
                                 <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:text="User\nManagement"
                                     android:textAlignment="center"
-                                    android:textSize="18sp"
                                     android:textColor="#FFF"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:textSize="18sp" />
 
 
                             </LinearLayout>
@@ -306,28 +306,28 @@
 
 
                             <LinearLayout
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:orientation="vertical"
-                                android:layout_marginStart="6dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="170dp"
-                                android:background="#03A0C0">
+                                android:layout_gravity="center"
+                                android:layout_marginStart="6dp"
+                                android:background="#03A0C0"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
 
                                 <ImageView
-                                    android:layout_marginBottom="12dp"
-                                    android:src="@drawable/icon_business_parameter"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_business_parameter" />
 
                                 <TextView
-                                    android:textAlignment="center"
-                                    android:text="Business Parameter\nMaintenance"
-                                    android:textSize="18sp"
-                                    android:textColor="#FFF"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:text="Business Parameter\nMaintenance"
+                                    android:textAlignment="center"
+                                    android:textColor="#FFF"
+                                    android:textSize="18sp" />
 
 
                             </LinearLayout>
@@ -338,9 +338,9 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginBottom="16dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -351,28 +351,28 @@
 
 
                             <LinearLayout
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:orientation="vertical"
-                                android:layout_marginEnd="6dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="170dp"
-                                android:background="#03A0C0">
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="6dp"
+                                android:background="#03A0C0"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
 
                                 <ImageView
-                                    android:layout_marginBottom="12dp"
-                                    android:src="@drawable/icon_system_admin"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_system_admin" />
 
                                 <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:text="System\nAdministration"
                                     android:textAlignment="center"
-                                    android:textSize="18sp"
                                     android:textColor="#FFF"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:textSize="18sp" />
 
 
                             </LinearLayout>
@@ -387,28 +387,28 @@
 
 
                             <LinearLayout
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:orientation="vertical"
-                                android:layout_marginStart="6dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="170dp"
-                                android:background="#03A0C0">
+                                android:layout_gravity="center"
+                                android:layout_marginStart="6dp"
+                                android:background="#03A0C0"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
 
                                 <ImageView
-                                    android:layout_marginBottom="12dp"
-                                    android:src="@drawable/icon_handling_guidelines"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_handling_guidelines" />
 
                                 <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:text="Handling\nGuidelines"
                                     android:textAlignment="center"
-                                    android:textSize="18sp"
                                     android:textColor="#FFF"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:textSize="18sp" />
 
 
                             </LinearLayout>
@@ -417,13 +417,12 @@
                         </LinearLayout>
 
 
-
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginBottom="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -434,28 +433,28 @@
 
 
                             <LinearLayout
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:orientation="vertical"
-                                android:layout_marginEnd="6dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="170dp"
-                                android:background="#03A0C0">
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="6dp"
+                                android:background="#03A0C0"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
 
                                 <ImageView
-                                    android:layout_marginBottom="12dp"
-                                    android:src="@drawable/icon_report_data_gen"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_report_data_gen" />
 
                                 <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:text="Report Data\nGeneration"
                                     android:textAlignment="center"
-                                    android:textSize="18sp"
                                     android:textColor="#FFF"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:textSize="18sp" />
 
 
                             </LinearLayout>
@@ -470,28 +469,28 @@
 
 
                             <LinearLayout
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:orientation="vertical"
-                                android:layout_marginStart="6dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="170dp"
-                                android:background="#03A0C0">
+                                android:layout_gravity="center"
+                                android:layout_marginStart="6dp"
+                                android:background="#03A0C0"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
 
                                 <ImageView
-                                    android:layout_marginBottom="12dp"
-                                    android:src="@drawable/icon_feedback"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_feedback" />
 
                                 <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:text="Feedback\nCorner"
                                     android:textAlignment="center"
-                                    android:textSize="18sp"
                                     android:textColor="#FFF"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
+                                    android:textSize="18sp" />
 
 
                             </LinearLayout>

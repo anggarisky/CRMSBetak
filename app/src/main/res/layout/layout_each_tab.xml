@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containerTab"
+    android:layout_width="@dimen/_74sdp"
+    android:layout_height="60sp"
+    android:background="@drawable/bg_each_tab">
+
+    <TextView
+        android:id="@+id/tabTitle"
+        android:layout_width="@dimen/_74sdp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_4sdp"
+        android:fontFamily="@font/"
+        android:gravity="center"
+        android:text="View Attachment / Comments"
+        android:textColor="#637989"
+        android:textSize="@dimen/_10ssp" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="@dimen/_82sdp"
+        android:layout_height="@dimen/_4sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/greenNew"
+        android:visibility="gone" />
+
+</RelativeLayout>

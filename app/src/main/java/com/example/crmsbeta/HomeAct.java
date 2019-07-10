@@ -1,16 +1,21 @@
 package com.example.crmsbeta;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 public class HomeAct extends AppCompatActivity {
+
+    private LinearLayout containerCaseHandling;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +23,17 @@ public class HomeAct extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         Toolbar toolbar_home = findViewById(R.id.home_toolbar);
+        containerCaseHandling = findViewById(R.id.containerCaseHandling);
+
         setSupportActionBar(toolbar_home);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        containerCaseHandling.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeAct.this, CaseHandlingActivity.class));
+            }
+        });
 
     }
 
@@ -34,7 +48,7 @@ public class HomeAct extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        switch (id){
+        switch (id) {
 
             case R.id.task_list:
                 Toast.makeText(HomeAct.this, item.getTitle().toString(), Toast.LENGTH_SHORT).show();

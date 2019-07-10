@@ -7,4 +7,10 @@
     <color name="greenNew">#46D3DD</color>
     <color name="greenDarkNew">#00BCD4</color>
     <color name="blackNew">#000000</color>
+
+    <color name="textPrimary">#313543</color>
+    <color name="tab_background_selected">#a9f9ff</color>
+    <color name="tab_background_unselected">#ffffff</color>
+    <color name="header_title">#0ebed5</color>
+    <color name="white">#ffffff</color>
 </resources>

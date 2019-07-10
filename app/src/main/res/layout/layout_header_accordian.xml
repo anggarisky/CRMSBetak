@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_38sdp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_weight="1"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center_vertical"
+        android:textColor="@color/header_title"
+        android:textSize="@dimen/_14ssp"
+        tools:text="Attachment / Comments Detail" />
+
+    <com.example.crmsbeta.widget.ToggleImageLabeledButton
+        android:id="@+id/foldButton"
+        android:layout_width="@dimen/_38sdp"
+        android:layout_height="@dimen/_38sdp"
+        android:background="@drawable/accordian_toggle_gradient_bg"
+        app:icon_resource="@drawable/ic_keyboard_arrow_up_white_12dp"
+        app:icon_resource_off="@drawable/ic_keyboard_arrow_down_white_12dp" />
+
+</LinearLayout>
