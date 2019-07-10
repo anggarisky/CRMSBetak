@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_search_white_24dp"
+        android:title="search"
+        app:showAsAction="always" />
+
+    <item
+        android:title="Contact Us"
+        app:showAsAction="never" />
+</menu>

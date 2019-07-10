@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">CRMS Beta</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="accordion_sections">
+        <item>Attachment / Comments Detail</item>
+    </string-array>
+
+    <string-array name="accordion_sections_comments_list">
+        <item>Attachment / Comments List</item>
+    </string-array>
+
+    <string-array name="accordion_case_summary">
+        <item>Case Summary</item>
+    </string-array>
 </resources>

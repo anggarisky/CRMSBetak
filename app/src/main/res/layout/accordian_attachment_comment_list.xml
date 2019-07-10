@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.crmsbeta.widget.AccordionView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_16sdp"
+    android:background="@drawable/bg_each_accordion"
+    android:orientation="vertical"
+    app:header_layout_fold_button_id="@id/foldButton"
+    app:header_layout_id="@layout/layout_header_accordian"
+    app:header_layout_label_id="@id/tvHeaderTitle"
+    app:section_bottom="@layout/accordion_footer"
+    app:section_container="@layout/accordion_section"
+    app:section_container_parent="@id/section_content"
+    app:section_headers="@array/accordion_sections_comments_list"
+    tools:showIn="@layout/fragment_case">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ccffd500"
+            android:padding="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Attachment No."
+                android:textColor="#de000000"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_150sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Issue Date"
+                android:textColor="#de000000"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintLeft_toRightOf="@id/guide"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- expandable -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="#e2e7f1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/roboto"
+                android:text="181017126"
+                android:textColor="#de000000"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_140sdp" />
+
+            <TextView
+                android:id="@+id/tvValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/roboto"
+                android:text="18-Oct-2018"
+                android:textColor="#de000000"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toRightOf="@id/guide2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnExpand"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:src="@drawable/arrow_down_expandable"
+                app:layout_constraintLeft_toRightOf="@id/tvValue"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandable_layout_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:el_duration="500"
+                app:el_expanded="false"
+                app:el_parallax="0.5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvValue">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#eef2f9"
+                    android:paddingLeft="@dimen/_4sdp"
+                    android:paddingRight="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/labelAttachment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Attachment"
+                        android:textColor="#de000000"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:id="@+id/tvAttachmentValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_toRightOf="@id/labelAttachment"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="right"
+                        android:text="2-176EOF41471178970125.txt"
+                        android:textColor="#0076ff"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_below="@id/tvAttachmentValue"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:background="#525151" />
+
+                    <TextView
+                        android:id="@+id/labelType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/line"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Type: EU1823 Attachment "
+                        android:textColor="#de000000"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:id="@+id/tvTypeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/line"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_toRightOf="@id/labelType"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="right"
+                        android:text="by EU1823"
+                        android:textColor="#de000000"
+                        android:textSize="@dimen/_12ssp" />
+                </RelativeLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="#e2e7f1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/roboto"
+                android:text="181017127"
+                android:textColor="#de000000"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_140sdp" />
+
+            <TextView
+                android:id="@+id/tvValue2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/roboto"
+                android:text="19-Oct-2018"
+                android:textColor="#de000000"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toRightOf="@id/guide3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnExpand2"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:src="@drawable/arrow_down_expandable"
+                app:layout_constraintLeft_toRightOf="@id/tvValue2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandable_layout_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:el_duration="500"
+                app:el_expanded="false"
+                app:el_parallax="0.5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvValue2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#eef2f9"
+                    android:paddingLeft="@dimen/_4sdp"
+                    android:paddingRight="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/labelAttachment2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Attachment"
+                        android:textColor="#de000000"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:id="@+id/tvAttachmentValue2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_toRightOf="@id/labelAttachment2"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="right"
+                        android:text="2-176EOF41471178970125.txt"
+                        android:textColor="#0076ff"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <View
+                        android:id="@+id/line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_below="@id/tvAttachmentValue2"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:background="#525151" />
+
+                    <TextView
+                        android:id="@+id/labelType2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/line2"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Type: EU1823 Attachment "
+                        android:textColor="#de000000"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:id="@+id/tvTypeValue2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/line2"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_toRightOf="@id/labelType2"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="right"
+                        android:text="by EU1823"
+                        android:textColor="#de000000"
+                        android:textSize="@dimen/_12ssp" />
+                </RelativeLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</com.example.crmsbeta.widget.AccordionView>

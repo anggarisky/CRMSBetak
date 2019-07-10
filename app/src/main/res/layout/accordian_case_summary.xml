@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.crmsbeta.widget.AccordionView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_16sdp"
+    android:background="@drawable/bg_each_accordion"
+    android:orientation="vertical"
+    app:header_layout_fold_button_id="@id/foldButton"
+    app:header_layout_id="@layout/layout_header_accordian"
+    app:header_layout_label_id="@id/tvHeaderTitle"
+    app:section_bottom="@layout/accordion_footer"
+    app:section_container="@layout/accordion_section"
+    app:section_container_parent="@id/section_content"
+    app:section_headers="@array/accordion_case_summary"
+    tools:showIn="@layout/fragment_case">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--case no-->
+        <TextView
+            android:id="@+id/labelCaseNo"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:background="#80ffda4d"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center_vertical"
+            android:padding="@dimen/_4sdp"
+            android:text="Case No."
+            android:textColor="#de000000"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/labelCaseNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:background="#eef2f9"
+            android:padding="@dimen/_4sdp"
+            android:text="18100001"
+            android:textColor="#de000000"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintLeft_toRightOf="@id/labelCaseNo"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--case caption-->
+
+        <TextView
+            android:id="@+id/labelCaseCaption"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="#ccffd500"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center_vertical"
+            android:padding="@dimen/_4sdp"
+            android:text="Case Caption"
+            android:textColor="#de000000"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelCaseNo" />
+
+        <TextView
+            android:id="@+id/labelCaseCaptionValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="#eef2f9"
+            android:padding="@dimen/_4sdp"
+            android:text="公屋申请"
+            android:textColor="#de000000"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintLeft_toRightOf="@id/labelCaseNo"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelCaseNo" />
+
+        <!--case type-->
+        <TextView
+            android:id="@+id/labelCaseType"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="#80ffda4d"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center_vertical"
+            android:padding="@dimen/_4sdp"
+            android:text="Case Type"
+            android:textColor="#de000000"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelCaseCaption" />
+
+        <TextView
+            android:id="@+id/tvCaseTypeValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="#eef2f9"
+            android:ellipsize="end"
+            android:lines="1"
+            android:padding="@dimen/_4sdp"
+            android:text="General (21 Days)"
+            android:textColor="#de000000"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintLeft_toRightOf="@id/labelCaseType"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelCaseCaption" />
+
+        <!--priority-->
+
+        <TextView
+            android:id="@+id/labelPriority"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="#ccffd500"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center_vertical"
+            android:padding="@dimen/_4sdp"
+            android:text="Priority"
+            android:textColor="#de000000"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelCaseType" />
+
+        <TextView
+            android:id="@+id/tvPriorityValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="#eef2f9"
+            android:padding="@dimen/_4sdp"
+            android:text="Normal"
+            android:textColor="#de000000"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintLeft_toRightOf="@id/labelPriority"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelCaseType" />
+
+        <!--created by-->
+
+        <TextView
+            android:id="@+id/labelCreatedBy"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="#80ffda4d"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center_vertical"
+            android:padding="@dimen/_4sdp"
+            android:text="Created By"
+            android:textColor="#de000000"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelPriority" />
+
+        <TextView
+            android:id="@+id/tvCreatedByValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="#eef2f9"
+            android:padding="@dimen/_4sdp"
+            android:text="EU1823"
+            android:textColor="#de000000"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintLeft_toRightOf="@id/labelCreatedBy"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelPriority" />
+
+        <!--date of receipt-->
+
+        <TextView
+            android:id="@+id/labelDateOfReceipt"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="#ccffd500"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center_vertical"
+            android:padding="@dimen/_4sdp"
+            android:text="Date of Receipt"
+            android:textColor="#de000000"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelCreatedBy" />
+
+        <TextView
+            android:id="@+id/tvDateOfReciptValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="#eef2f9"
+            android:padding="@dimen/_4sdp"
+            android:text="19 Oct 2019"
+            android:textColor="#de000000"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintLeft_toRightOf="@id/labelDateOfReceipt"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCreatedByValue" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.example.crmsbeta.widget.AccordionView>
