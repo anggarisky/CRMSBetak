@@ -195,6 +195,7 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
         List<String> menuChildrenOfficeAdmin = new ArrayList<>();
         menuChildrenOfficeAdmin.add("Maintain Office Code");
 
+        // fixme : ganti icon dengan yang sesuai
         menuModels.add(new SelectableMenuModel(new MenuModel("CRMS", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
         menuModels.add(new SelectableMenuModel(new MenuModel("Case Handling", emptyList,
