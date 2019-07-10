@@ -100,20 +100,33 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/username" />
 
+                <TextView
+                    android:id="@+id/error_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="You have used an invalid user name, password \nor client certificate."
+                    android:textColor="#D0021B"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
                 <Button
                     android:id="@+id/btn_login"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="32dp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="24dp"
                     android:layout_marginEnd="32dp"
                     android:background="@drawable/btn_primary"
-                    android:textAllCaps="false"
-                    android:textSize="20sp"
                     android:text="Sign In"
+                    android:textAllCaps="false"
                     android:textColor="#FFF"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/password" />
 
@@ -121,14 +134,14 @@
                     android:id="@+id/help_icon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="72dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
                     android:src="@drawable/icon_info"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+                    app:layout_constraintTop_toBottomOf="@+id/error_msg" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

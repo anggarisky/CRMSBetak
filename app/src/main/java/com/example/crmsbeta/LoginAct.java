@@ -2,7 +2,9 @@ package com.example.crmsbeta;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -14,7 +16,7 @@ public class LoginAct extends AppCompatActivity {
 
     Animation login_animate;
     ImageView ha_logo, crms_logo, help_icon;
-    TextView textView3, textView;
+    TextView textView3, textView, error_msg;
     EditText username, password;
     Button btn_login;
 
@@ -30,11 +32,36 @@ public class LoginAct extends AppCompatActivity {
 
         textView3 = findViewById(R.id.textView3);
         textView = findViewById(R.id.textView);
+        error_msg = findViewById(R.id.error_msg);
 
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
 
         btn_login = findViewById(R.id.btn_login);
+
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final String xpassword = password.getText().toString();
+
+                if(xpassword.isEmpty()){
+                    error_msg.setAlpha(1);
+                }
+                else
+                {
+                    error_msg.setAlpha(0);
+                    // change activity
+                    Intent gogethome = new Intent(LoginAct.this,HomeAct.class);
+                    gogethome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(gogethome);
+                    overridePendingTransition(0,0); //0 for no animation
+                    finish();
+                }
+            }
+        });
+
+        error_msg.setAlpha(0);
 
 
         // set animate
@@ -47,6 +74,7 @@ public class LoginAct extends AppCompatActivity {
 
         textView3.startAnimation(login_animate);
         textView.startAnimation(login_animate);
+        error_msg.startAnimation(login_animate);
 
         username.startAnimation(login_animate);
         password.startAnimation(login_animate);

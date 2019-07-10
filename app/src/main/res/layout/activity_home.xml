@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greenDarkNew"
+    tools:context=".HomeAct">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg_home_gradient"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <include
+                    android:id="@+id/home_toolbar"
+                    layout="@layout/toolbar_home"
+                    />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bg_header_home"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/home_toolbar" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="32dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageView">
+
+                    <LinearLayout
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/bg_ic_search">
+
+
+                        <ImageView
+                            android:layout_marginTop="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:src="@drawable/ic_search"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp">
+
+                        <EditText
+                            android:inputType="text"
+                            android:background="@drawable/et_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical"
+                    android:paddingBottom="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+
+                    <LinearLayout
+                        android:layout_marginBottom="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:layout_marginEnd="6dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:background="#03A0C0">
+
+
+                                <ImageView
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_case_handling"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="Case Handling"
+                                    android:textSize="18sp"
+                                    android:textColor="#FFF"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:layout_marginStart="6dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:background="#03A0C0">
+
+
+                                <ImageView
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_case_search"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="Case Search"
+                                    android:textSize="18sp"
+                                    android:textColor="#FFF"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:layout_marginEnd="6dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:background="#03A0C0">
+
+
+                                <ImageView
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_statistic_input"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="Statistic Input"
+                                    android:textSize="18sp"
+                                    android:textColor="#FFF"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:layout_marginStart="6dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:background="#03A0C0">
+
+
+                                <ImageView
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_office_admin_active"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="Office\nAdministration"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp"
+                                    android:textColor="#FFF"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:layout_marginEnd="6dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:background="#03A0C0">
+
+
+                                <ImageView
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_user_management"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="User\nManagement"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp"
+                                    android:textColor="#FFF"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:layout_marginStart="6dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:background="#03A0C0">
+
+
+                                <ImageView
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_business_parameter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:textAlignment="center"
+                                    android:text="Business Parameter\nMaintenance"
+                                    android:textSize="18sp"
+                                    android:textColor="#FFF"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:layout_marginEnd="6dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:background="#03A0C0">
+
+
+                                <ImageView
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_system_admin"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="System\nAdministration"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp"
+                                    android:textColor="#FFF"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:layout_marginStart="6dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:background="#03A0C0">
+
+
+                                <ImageView
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_handling_guidelines"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="Handling\nGuidelines"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp"
+                                    android:textColor="#FFF"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginBottom="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:layout_marginEnd="6dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:background="#03A0C0">
+
+
+                                <ImageView
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_report_data_gen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="Report Data\nGeneration"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp"
+                                    android:textColor="#FFF"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:layout_marginStart="6dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:background="#03A0C0">
+
+
+                                <ImageView
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/icon_feedback"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:text="Feedback\nCorner"
+                                    android:textAlignment="center"
+                                    android:textSize="18sp"
+                                    android:textColor="#FFF"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

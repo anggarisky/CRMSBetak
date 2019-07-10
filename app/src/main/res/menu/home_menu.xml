@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_more"
+        android:title=""
+        android:icon="@drawable/ic_more"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/task_list"
+                android:icon="@drawable/ic_task_list"
+                android:title="My Task List"
+                app:showAsAction="ifRoom" />
+
+            <item
+                android:id="@+id/notification"
+                android:icon="@drawable/ic_notification"
+                android:title="Notifications"
+                app:showAsAction="ifRoom" />
+
+            <item
+                android:id="@+id/message_box"
+                android:icon="@drawable/ic_message"
+                android:title="Message Box"
+                app:showAsAction="ifRoom" />
+
+            <item
+                android:id="@+id/setting"
+                android:icon="@drawable/ic_setting"
+                android:title="Settings"
+                app:showAsAction="ifRoom" />
+
+            <item
+                android:id="@+id/help"
+                android:icon="@drawable/ic_help"
+                android:title="Help"
+                app:showAsAction="ifRoom" />
+
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Logout"
+                app:showAsAction="ifRoom" />
+
+        </menu>
+
+    </item>
+
+</menu>
