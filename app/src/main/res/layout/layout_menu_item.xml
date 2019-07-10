@@ -38,7 +38,7 @@
             android:layout_toRightOf="@id/imgIconMenu"
             android:fontFamily="@font/roboto_medium"
             android:textColor="@color/white"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_12ssp"
             tools:text="CRMS" />
 
         <ImageView
@@ -48,7 +48,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/_16sdp"
-            android:src="@drawable/arrow_down_expandable"
+            android:src="@drawable/ic_keyboard_arrow_down_white_12dp"
             android:visibility="gone" />
 
         <net.cachapa.expandablelayout.ExpandableLayout

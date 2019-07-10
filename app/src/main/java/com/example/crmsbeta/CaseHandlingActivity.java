@@ -1,6 +1,7 @@
 package com.example.crmsbeta;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -73,6 +74,7 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
         toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         );
+        toggle.getDrawerArrowDrawable().setColor(Color.WHITE);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -190,6 +192,9 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
         menuChildrenCaseSearch.add("Advanced Search");
         menuChildrenCaseSearch.add("Search Results");
 
+        List<String> menuChildrenOfficeAdmin = new ArrayList<>();
+        menuChildrenOfficeAdmin.add("Maintain Office Code");
+
         menuModels.add(new SelectableMenuModel(new MenuModel("CRMS", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
         menuModels.add(new SelectableMenuModel(new MenuModel("Case Handling", emptyList,
@@ -197,6 +202,23 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
         menuModels.add(new SelectableMenuModel(new MenuModel("Case Search", menuChildrenCaseSearch,
                 R.drawable.icon_statistic_input, R.drawable.icon_case_search), false));
         menuModels.add(new SelectableMenuModel(new MenuModel("Statistic Input", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Office Administration", menuChildrenOfficeAdmin,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("User Management", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Business Parameter \n" +
+                "Maintenance", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("System \n" +
+                "Administration", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Handling Guidelines", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Report Data \n" +
+                "Generation", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Feedback Corner", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
 
         rvMenuAdapter = new MenuNavAdapter(menuModels, this);
