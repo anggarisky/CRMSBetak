@@ -16,8 +16,12 @@
         <attr name="section_container" format="reference" />
         <attr name="section_container_parent" format="reference" />
         <attr name="section_bottom" format="reference" />
-        <attr name="section_visibility" format="reference"/>
+        <attr name="section_visibility" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="ExpandableLayout">
+        <attr name="canExpand" format="boolean" />
+        <attr name="startExpanded" format="boolean" />
+    </declare-styleable>
 
 </resources>

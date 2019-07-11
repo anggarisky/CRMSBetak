@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.crmsbeta.R;
 import com.example.crmsbeta.model.MenuModel;
 import com.example.crmsbeta.model.SelectableMenuModel;
-import com.example.crmsbeta.viewholder.SelectableViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MenuNavAdapter extends RecyclerView.Adapter implements SelectableViewHolder.OnItemSelectedListener {
+
 
     private final List<SelectableMenuModel> mValues;
     SelectableViewHolder.OnItemSelectedListener listener;
@@ -50,10 +50,9 @@ public class MenuNavAdapter extends RecyclerView.Adapter implements SelectableVi
 
     @Override
     public void onItemSelected(SelectableMenuModel item) {
-        Log.d("tag", "menu nav adapter on item selected");
+        Log.d("tag", "on item selected");
         for (SelectableMenuModel selectableMenuModel : mValues) {
-            Log.d("tag", "menu nav adapter find item " + item.getMenuTitle());
-
+            Log.d("tag", "find item " + item.getMenuTitle());
             if (!selectableMenuModel.equals(item) && selectableMenuModel.isSelected()) {
                 // jika dia bukan item yang dicari. tetapi status is selected, set data tersebut ke false
                 selectableMenuModel.setSelected(false);
@@ -70,4 +69,6 @@ public class MenuNavAdapter extends RecyclerView.Adapter implements SelectableVi
         return mValues.size();
     }
 }
+
+
 

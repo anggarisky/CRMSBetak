@@ -32,7 +32,7 @@ import com.example.crmsbeta.fragment.EmptyFragment;
 import com.example.crmsbeta.model.CaseFragmentModel;
 import com.example.crmsbeta.model.MenuModel;
 import com.example.crmsbeta.model.SelectableMenuModel;
-import com.example.crmsbeta.viewholder.SelectableViewHolder;
+import com.example.crmsbeta.adapter.SelectableViewHolder;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 

@@ -1,4 +1,4 @@
-package com.example.crmsbeta.viewholder;
+package com.example.crmsbeta.adapter;
 
 import android.graphics.Color;
 import android.util.Log;
@@ -17,7 +17,7 @@ import net.cachapa.expandablelayout.ExpandableLayout;
 
 public class SelectableViewHolder extends RecyclerView.ViewHolder {
 
-    public SelectableMenuModel mItem;
+    SelectableMenuModel mItem;
     private OnItemSelectedListener listener;
     private View lineSelected;
     private ImageView btnExpand;
@@ -40,10 +40,8 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindItem() {
-
         if (mItem.getMenuChildren().size() > 0) {
             btnExpand.setVisibility(View.VISIBLE);
-            Log.d("tag", "expanded menu set visibility visible");
             expandedMenu.setVisibility(View.VISIBLE);
         } else {
             btnExpand.setVisibility(View.GONE);
@@ -53,8 +51,6 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder {
         containerMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                handleOpenExpand();
-
                 if (mItem.isSelected()) {
                     // deselect
                     setChecked(false);
@@ -62,26 +58,27 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder {
                     // select
                     setChecked(true);
                 }
+                handleOpenExpand();
                 listener.onItemSelected(mItem);
             }
         });
+
 
         tvTitleMenu.setText(mItem.getMenuTitle());
     }
 
     private void handleOpenExpand() {
-        Log.d("tag", "hndle open expand");
+        Log.d("tag", "expandable is expanded ? " + expandedMenu.isExpanded());
 
         if (mItem.getMenuChildren().size() > 0) {
             if (expandedMenu.isExpanded()) {
-                Log.d("tag", "collapse menu");
+                Log.d("tag", "expandable collapse");
                 expandedMenu.collapse();
             } else {
-                Log.d("tag", "expand menu");
+                expandedMenu.setVisibility(View.VISIBLE);
+                Log.d("tag", "expandable expand");
                 expandedMenu.expand();
             }
-        } else {
-            Log.d("tag", "item size < 0");
         }
     }
 
