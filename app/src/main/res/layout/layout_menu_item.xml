@@ -56,14 +56,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvTitleMenu"
-            android:layout_toRightOf="@id/imgIconMenu"
-            android:visibility="gone">
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_toRightOf="@id/imgIconMenu">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Expanded"
+                android:text="Expanded Menu"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14ssp" />
 

@@ -50,9 +50,10 @@ public class MenuNavAdapter extends RecyclerView.Adapter implements SelectableVi
 
     @Override
     public void onItemSelected(SelectableMenuModel item) {
-        Log.d("tag", "on item selected");
+        Log.d("tag", "menu nav adapter on item selected");
         for (SelectableMenuModel selectableMenuModel : mValues) {
-            Log.d("tag", "find item " + item.getMenuTitle());
+            Log.d("tag", "menu nav adapter find item " + item.getMenuTitle());
+
             if (!selectableMenuModel.equals(item) && selectableMenuModel.isSelected()) {
                 // jika dia bukan item yang dicari. tetapi status is selected, set data tersebut ke false
                 selectableMenuModel.setSelected(false);

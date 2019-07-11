@@ -194,6 +194,7 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
 
         List<String> menuChildrenOfficeAdmin = new ArrayList<>();
         menuChildrenOfficeAdmin.add("Maintain Office Code");
+        menuChildrenOfficeAdmin.add("Maintain Office Code");
 
         // fixme : ganti icon dengan yang sesuai
         menuModels.add(new SelectableMenuModel(new MenuModel("CRMS", emptyList,
