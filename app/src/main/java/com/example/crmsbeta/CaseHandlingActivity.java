@@ -238,7 +238,7 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
     }
 
     @Override
-    public void onItemSelected(SelectableMenuModel item) {
+    public void onItemSelected(SelectableMenuModel item, int pos) {
         Log.d("tag", "menu " + item.getMenuTitle());
     }
 

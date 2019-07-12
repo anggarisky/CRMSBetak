@@ -47,12 +47,12 @@ public class MenuNavAdapter extends RecyclerView.Adapter implements SelectableVi
         SelectableMenuModel selectableMenuModel = mValues.get(position);
 
         holder.mItem = selectableMenuModel;
-        holder.bindItem();
+        holder.bindItem(position);
         holder.setChecked(holder.mItem.isSelected());
     }
 
     @Override
-    public void onItemSelected(SelectableMenuModel item) {
+    public void onItemSelected(SelectableMenuModel item, int pos) {
         Log.d("tag", "on item selected");
         for (SelectableMenuModel selectableMenuModel : mValues) {
             Log.d("tag", "find item " + item.getMenuTitle());
@@ -63,8 +63,9 @@ public class MenuNavAdapter extends RecyclerView.Adapter implements SelectableVi
                 selectableMenuModel.setSelected(true);
             }
         }
-        notifyDataSetChanged();
-        listener.onItemSelected(item);
+//        notifyDataSetChanged();
+        notifyItemChanged(pos);
+        listener.onItemSelected(item, pos);
     }
 
     @Override

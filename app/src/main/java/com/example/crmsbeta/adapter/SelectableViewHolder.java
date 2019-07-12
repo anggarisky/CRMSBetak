@@ -60,7 +60,7 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder implements Sel
         listener.onSubMenuSelected(item);
     }
 
-    public void bindItem() {
+    public void bindItem(final int pos) {
         if (mItem.getMenuChildren().size() > 0) {
             btnExpand.setVisibility(View.VISIBLE);
             expandedMenu.setVisibility(View.VISIBLE);
@@ -87,7 +87,7 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder implements Sel
                     setChecked(true);
                 }
                 handleOpenExpand();
-                listener.onItemSelected(mItem);
+                listener.onItemSelected(mItem, pos);
             }
         });
 
@@ -129,7 +129,7 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder implements Sel
 
 
     public interface OnItemSelectedListener {
-        void onItemSelected(SelectableMenuModel item);
+        void onItemSelected(SelectableMenuModel item, int pos);
 
         void onSubMenuSelected(SelectableSubMenuModel item);
     }
