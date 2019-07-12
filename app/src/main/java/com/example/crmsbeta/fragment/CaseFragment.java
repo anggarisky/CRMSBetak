@@ -32,7 +32,9 @@ import java.util.Calendar;
 public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
 
     private ImageView btnDate;
+
     private ImageView btnAttachmentCommentType;
+
     private View containerAttachmentCommentType;
     private ImageView btnExpand;
     private ImageView btnExpand2;

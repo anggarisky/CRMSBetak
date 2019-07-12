@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.crmsbeta.widget.AccordionView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_each_accordion"
+    android:orientation="vertical"
+    app:header_layout_fold_button_id="@id/foldButton"
+    app:header_layout_id="@layout/layout_header_accordian"
+    app:header_layout_label_id="@id/tvHeaderTitle"
+    app:section_bottom="@layout/accordion_footer"
+    app:section_container="@layout/accordion_section"
+    app:section_container_parent="@id/section_content"
+    app:section_headers="@array/accordion_cp_summary"
+    tools:showIn="@layout/fragment_caseparticulars">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--Case Option-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/roboto"
+            android:text="Case Caption"
+            android:textColor="#8a000000"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:textSize="@dimen/_14ssp" />
+
+        <EditText
+            android:hint="Enter text"
+            android:textColorHint="#40000000"
+            android:background="@drawable/et_accordion"
+            android:paddingLeft="@dimen/_6sdp"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_36sdp" />
+
+
+        <!--Case no and Priority-->
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_8sdp"
+            android:weightSum="4"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--Case No.-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="Case No."
+                        android:textColor="#8a000000"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <EditText
+                        android:focusable="false"
+                        android:text="N/A"
+                        android:textColorHint="#40000000"
+                        android:background="@drawable/et_accordion_disabled"
+                        android:paddingLeft="@dimen/_6sdp"
+                        android:inputType="text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_36sdp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--Priority-->
+
+                    <TextView
+                        android:id="@+id/priorityTitleSection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="Priority *"
+                        android:textColor="#8a000000"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <EditText
+                        android:textColorHint="#40000000"
+                        android:background="@drawable/et_accordion"
+                        android:paddingLeft="@dimen/_6sdp"
+                        android:inputType="text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_36sdp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- Case Nature -->
+
+        <TextView
+            android:id="@+id/caseNatureTitleSection"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Case Nature *"
+            android:textColor="#8a000000"
+            android:textSize="@dimen/_14ssp" />
+
+
+        <LinearLayout
+            android:id="@+id/caseNatureTrigger"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_input"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleCaseNature"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_8sdp"
+                android:text="Request"
+                android:textColor="#de000000" />
+
+            <ImageView
+                android:id="@+id/btnCaseNature"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:background="@drawable/bg_icon_input"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_keyboard_arrow_down_item_22dp" />
+        </LinearLayout>
+
+        <!-- Privacy Status -->
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Privacy Status"
+            android:textColor="#8a000000"
+            android:textSize="@dimen/_14ssp" />
+
+
+        <LinearLayout
+            android:id="@+id/privacyStatusTrigger"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_input"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titlePrivacyStatus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_8sdp"
+                android:text="Non-Privacy Case"
+                android:textColor="#de000000" />
+
+            <ImageView
+                android:id="@+id/btnPrivacyStatus"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:background="@drawable/bg_icon_input"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_keyboard_arrow_down_item_22dp" />
+        </LinearLayout>
+
+        <!-- Case Type * -->
+
+        <TextView
+            android:id="@+id/caseTypeTitleSection"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Case Type *"
+            android:textColor="#8a000000"
+            android:textSize="@dimen/_14ssp" />
+
+
+        <LinearLayout
+            android:id="@+id/caseTypeTrigger"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_64sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_input"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleCaseType"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto"
+                android:padding="@dimen/_8sdp"
+                android:text="Enquiries of Endorsement of Maintenance Orders 贍養費支付人資料21days)"
+                android:textColor="#de000000" />
+
+            <ImageView
+                android:id="@+id/btnCaseType"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:background="@drawable/bg_icon_input"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_keyboard_arrow_down_item_22dp" />
+        </LinearLayout>
+
+
+        <!-- Source * -->
+
+        <TextView
+            android:id="@+id/sourceTitleSection"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Source *"
+            android:textColor="#8a000000"
+            android:textSize="@dimen/_14ssp" />
+
+
+        <LinearLayout
+            android:id="@+id/sourceTrigger"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_input"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleSource"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_8sdp"
+                android:text="*** Please Specify ***"
+                android:textColor="#de000000" />
+
+            <ImageView
+                android:id="@+id/btnSource"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:background="@drawable/bg_icon_input"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_keyboard_arrow_down_item_22dp" />
+        </LinearLayout>
+
+
+        <!-- Councillor's Name * -->
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Councillor's Name"
+            android:textColor="#8a000000"
+            android:textSize="@dimen/_14ssp" />
+
+
+        <LinearLayout
+            android:id="@+id/councilTrigger"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_input"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleCouncil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_8sdp"
+                android:text="張超雄議員 CHEUNG Chiu-hung"
+                android:textColor="#de000000" />
+
+            <ImageView
+                android:id="@+id/btnCouncil"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:background="@drawable/bg_icon_input"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_keyboard_arrow_down_item_22dp" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/roboto"
+            android:text="Remarks"
+            android:textColor="#8a000000"
+            android:textSize="@dimen/_14ssp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_edittext_textarea"
+            android:gravity="top"
+            android:lines="5"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingTop="@dimen/_8sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="@font/roboto"
+            android:text="* required field"
+            android:textSize="@dimen/_12ssp" />
+
+
+    </LinearLayout>
+
+
+</com.example.crmsbeta.widget.AccordionView>
