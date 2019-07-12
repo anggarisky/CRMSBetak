@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="@dimen/_48sdp"
@@ -17,60 +17,66 @@
             android:id="@+id/lineSelected"
             android:layout_width="@dimen/_6sdp"
             android:layout_height="@dimen/_48sdp"
-            android:layout_alignParentLeft="true"
             android:background="#ffd500"
-            android:visibility="gone" />
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imgIconMenu"
             android:layout_width="@dimen/_18sdp"
             android:layout_height="@dimen/_18sdp"
-            android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/_16sdp"
-            android:src="@drawable/ic_help" />
+            android:layout_marginTop="@dimen/_16sdp"
+            android:src="@drawable/ic_help"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvTitleMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/_16sdp"
-            android:layout_toRightOf="@id/imgIconMenu"
+            android:layout_marginLeft="@dimen/_42sdp"
+            android:layout_marginTop="@dimen/_16sdp"
             android:fontFamily="@font/roboto_medium"
             android:textColor="@color/white"
             android:textSize="@dimen/_12ssp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="CRMS" />
 
         <ImageView
             android:id="@+id/btnExpand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/_16sdp"
             android:layout_marginRight="@dimen/_16sdp"
             android:src="@drawable/ic_keyboard_arrow_down_white_12dp"
-            android:visibility="gone" />
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <net.cachapa.expandablelayout.ExpandableLayout
             android:id="@+id/expandableMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvTitleMenu"
-            android:layout_marginTop="@dimen/_16sdp"
-            android:layout_toRightOf="@id/imgIconMenu">
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="#748c9d"
+            android:paddingLeft="@dimen/_42sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleMenu">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Expanded"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_14ssp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSubMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </net.cachapa.expandablelayout.ExpandableLayout>
 
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </LinearLayout>

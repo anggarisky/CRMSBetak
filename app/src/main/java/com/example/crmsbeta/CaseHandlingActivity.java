@@ -40,7 +40,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CaseHandlingActivity extends AppCompatActivity {
+public class CaseHandlingActivity extends AppCompatActivity implements SelectableViewHolder.OnItemSelectedListener {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -183,44 +183,31 @@ public class CaseHandlingActivity extends AppCompatActivity {
         ab.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
         ab.setDisplayHomeAsUpEnabled(true);
 
+        List<String> emptyList = Collections.emptyList();
 
-        menuNavItems = new ArrayList<>();
+        List<MenuModel> menuModels = new ArrayList<>();
 
-        menuNavItems.add(new MenuNavItem(false, "CRMS",
-                R.drawable.icon_statistic_input,
-                R.drawable.icon_statistic_input));
-        menuNavItems.add(new MenuNavItem(true, "Case Handling",
-                R.drawable.icon_statistic_input,
-                R.drawable.icon_statistic_input));
+        List<String> menuChildrenCaseSearch = new ArrayList<>();
+        menuChildrenCaseSearch.add("Simple Search");
+        menuChildrenCaseSearch.add("Advanced Search");
+        menuChildrenCaseSearch.add("Search Results");
 
-        rvMenu.setLayoutManager(new LinearLayoutManager(this));
+        List<String> menuChildrenOfficeAdmin = new ArrayList<>();
+        menuChildrenOfficeAdmin.add("Maintain Office Code");
+        menuChildrenOfficeAdmin.add("Maintain Office Code");
 
+        // fixme : ganti icon dengan yang sesuai
+        menuModels.add(new SelectableMenuModel(new MenuModel("CRMS", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Case Handling", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_case_handling), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Case Search", menuChildrenCaseSearch,
+                R.drawable.icon_statistic_input, R.drawable.icon_case_search), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Statistic Input", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Office Administration", menuChildrenOfficeAdmin,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
 
-
-//        List<String> emptyList = Collections.emptyList();
-//
-//        List<MenuModel> menuModels = new ArrayList<>();
-//
-//        List<String> menuChildrenCaseSearch = new ArrayList<>();
-//        menuChildrenCaseSearch.add("Simple Search");
-//        menuChildrenCaseSearch.add("Advanced Search");
-//        menuChildrenCaseSearch.add("Search Results");
-//
-//        List<String> menuChildrenOfficeAdmin = new ArrayList<>();
-//        menuChildrenOfficeAdmin.add("Maintain Office Code");
-//        menuChildrenOfficeAdmin.add("Maintain Office Code");
-//
-//        // fixme : ganti icon dengan yang sesuai
-//        menuModels.add(new SelectableMenuModel(new MenuModel("CRMS", emptyList,
-//                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
-//        menuModels.add(new SelectableMenuModel(new MenuModel("Case Handling", emptyList,
-//                R.drawable.icon_statistic_input, R.drawable.icon_case_handling), false));
-//        menuModels.add(new SelectableMenuModel(new MenuModel("Case Search", menuChildrenCaseSearch,
-//                R.drawable.icon_statistic_input, R.drawable.icon_case_search), false));
-//        menuModels.add(new SelectableMenuModel(new MenuModel("Statistic Input", emptyList,
-//                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
-//        menuModels.add(new SelectableMenuModel(new MenuModel("Office Administration", menuChildrenOfficeAdmin,
-//                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
 //        menuModels.add(new SelectableMenuModel(new MenuModel("User Management", emptyList,
 //                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
 //        menuModels.add(new SelectableMenuModel(new MenuModel("Business Parameter \n" +
@@ -236,10 +223,20 @@ public class CaseHandlingActivity extends AppCompatActivity {
 //                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
 //        menuModels.add(new SelectableMenuModel(new MenuModel("Feedback Corner", emptyList,
 //                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
-//
-////        rvMenuAdapter = new MenuNavAdapter(menuModels, this);
-//        rvMenu.setAdapter(rvMenuAdapter);
-//        rvMenu.setLayoutManager(new LinearLayoutManager(this));
+
+        rvMenuAdapter = new MenuNavAdapter(menuModels, this);
+        rvMenu.setAdapter(rvMenuAdapter);
+        rvMenu.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public void onItemSelected(SelectableMenuModel item) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 
     private class CaseHandlingAdapter extends FragmentStatePagerAdapter {
@@ -295,7 +292,7 @@ public class CaseHandlingActivity extends AppCompatActivity {
         }
     }
 
-    static class MyViewHolder extends RecyclerView.ViewHolder{
+    static class MyViewHolder extends RecyclerView.ViewHolder {
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

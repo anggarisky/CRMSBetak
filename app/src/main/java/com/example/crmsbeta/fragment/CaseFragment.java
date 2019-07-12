@@ -2,8 +2,13 @@ package com.example.crmsbeta.fragment;
 
 
 import android.app.DatePickerDialog;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -36,6 +41,7 @@ public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSet
     private View containerAttachmentCommentType;
     private ImageView btnExpand;
     private ImageView btnExpand2;
+    private TextView lblAttachmentIssueDate;
     private ExpandableLayout expandableLayout1;
     private ExpandableLayout expandableLayout2;
     private TextView tvDate;
@@ -64,6 +70,7 @@ public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSet
 
         btnDate = view.findViewById(R.id.btnDate);
         tvDate = view.findViewById(R.id.tvDate);
+        lblAttachmentIssueDate = view.findViewById(R.id.lblAttachmentIssueDate);
         tvTitlePopupMenu = view.findViewById(R.id.tvTitlePopupMenu);
         btnAttachmentCommentType = view.findViewById(R.id.btnAttachmentCommentType);
         containerAttachmentCommentType = view.findViewById(R.id.containerAttachmentCommentType);
@@ -71,6 +78,9 @@ public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSet
         btnExpand2 = view.findViewById(R.id.btnExpand2);
         expandableLayout1 = view.findViewById(R.id.expandable_layout_1);
         expandableLayout2 = view.findViewById(R.id.expandable_layout_2);
+
+        // set span bintang
+        setSpanBintang(lblAttachmentIssueDate);
 
         final Drawable imgUp = ContextCompat.getDrawable(getActivity(), R.drawable.arrow_up_expandable);
         final Drawable imgDown = ContextCompat.getDrawable(getActivity(), R.drawable.arrow_down_expandable);
@@ -126,6 +136,14 @@ public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSet
         });
     }
 
+    private void setSpanBintang(TextView tvSpan) {
+        SpannableString spannableString = new SpannableString(tvSpan.getText());
+        ForegroundColorSpan colorSpan = new ForegroundColorSpan(Color.RED);
+        int textLength = tvSpan.getText().length();
+        spannableString.setSpan(colorSpan, textLength - 1, textLength, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tvSpan.setText(spannableString);
+    }
+
     private void initiatePopup() {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.layout_row_popup, null);
@@ -136,10 +154,26 @@ public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSet
 
     private void openCalendar() {
         calendar = Calendar.getInstance();
-        DatePickerDialog dp = new DatePickerDialog(getActivity(), this,
+//        DatePickerDialog dp = new DatePickerDialog(getActivity(), this,
+//                calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+//                calendar.get(Calendar.DAY_OF_MONTH));
+//        dp.show();
+
+        DatePickerDialog newDp = new DatePickerDialog(getActivity(), getListenerDateTwo(),
                 calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH));
-        dp.show();
+        // buat buka
+        newDp.show();
+    }
+
+    private DatePickerDialog.OnDateSetListener getListenerDateTwo() {
+        return new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+
+            }
+        };
     }
 
     @Override
