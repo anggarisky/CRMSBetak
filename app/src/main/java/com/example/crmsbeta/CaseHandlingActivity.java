@@ -28,6 +28,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.crmsbeta.adapter.MenuNavAdapter;
 import com.example.crmsbeta.fragment.CaseFragment;
+import com.example.crmsbeta.fragment.CaseParticularsFragment;
 import com.example.crmsbeta.fragment.EmptyFragment;
 import com.example.crmsbeta.model.CaseFragmentModel;
 import com.example.crmsbeta.model.MenuModel;
@@ -109,10 +110,11 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
         List<CaseFragmentModel> listFragment = new ArrayList<>();
 
         listFragment.add(
-                new CaseFragmentModel("Case Particulars", EmptyFragment.newInstance())
+                new CaseFragmentModel("Case Particulars", CaseParticularsFragment.newInstance())
         );
 
         listFragment.add(new CaseFragmentModel("View Attachments/Comments", CaseFragment.newInstance()));
+
         listFragment.add(
                 new CaseFragmentModel("Letter Preparations", EmptyFragment.newInstance())
         );

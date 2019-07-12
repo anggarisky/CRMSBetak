@@ -16,4 +16,12 @@
     <string-array name="accordion_case_summary">
         <item>Case Summary</item>
     </string-array>
+
+    <string-array name="accordion_cp_summary">
+        <item>Summary</item>
+    </string-array>
+
+    <string-array name="accordion_cp_handling">
+        <item>Case Handling</item>
+    </string-array>
 </resources>

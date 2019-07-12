@@ -37,11 +37,12 @@ import java.util.Calendar;
 public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
 
     private ImageView btnDate;
+
     private ImageView btnAttachmentCommentType;
+
     private View containerAttachmentCommentType;
     private ImageView btnExpand;
     private ImageView btnExpand2;
-    private TextView lblAttachmentIssueDate;
     private ExpandableLayout expandableLayout1;
     private ExpandableLayout expandableLayout2;
     private TextView tvDate;
@@ -70,7 +71,6 @@ public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSet
 
         btnDate = view.findViewById(R.id.btnDate);
         tvDate = view.findViewById(R.id.tvDate);
-        lblAttachmentIssueDate = view.findViewById(R.id.lblAttachmentIssueDate);
         tvTitlePopupMenu = view.findViewById(R.id.tvTitlePopupMenu);
         btnAttachmentCommentType = view.findViewById(R.id.btnAttachmentCommentType);
         containerAttachmentCommentType = view.findViewById(R.id.containerAttachmentCommentType);
@@ -78,9 +78,6 @@ public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSet
         btnExpand2 = view.findViewById(R.id.btnExpand2);
         expandableLayout1 = view.findViewById(R.id.expandable_layout_1);
         expandableLayout2 = view.findViewById(R.id.expandable_layout_2);
-
-        // set span bintang
-        setSpanBintang(lblAttachmentIssueDate);
 
         final Drawable imgUp = ContextCompat.getDrawable(getActivity(), R.drawable.arrow_up_expandable);
         final Drawable imgDown = ContextCompat.getDrawable(getActivity(), R.drawable.arrow_down_expandable);
@@ -154,26 +151,10 @@ public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSet
 
     private void openCalendar() {
         calendar = Calendar.getInstance();
-//        DatePickerDialog dp = new DatePickerDialog(getActivity(), this,
-//                calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
-//                calendar.get(Calendar.DAY_OF_MONTH));
-//        dp.show();
-
-        DatePickerDialog newDp = new DatePickerDialog(getActivity(), getListenerDateTwo(),
+        DatePickerDialog dp = new DatePickerDialog(getActivity(), this,
                 calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH));
-        // buat buka
-        newDp.show();
-    }
-
-    private DatePickerDialog.OnDateSetListener getListenerDateTwo() {
-        return new DatePickerDialog.OnDateSetListener() {
-
-            @Override
-            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-
-            }
-        };
+        dp.show();
     }
 
     @Override
