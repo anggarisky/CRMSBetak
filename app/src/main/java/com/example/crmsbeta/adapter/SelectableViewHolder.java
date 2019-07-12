@@ -15,13 +15,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.crmsbeta.R;
 import com.example.crmsbeta.model.SelectableMenuModel;
+import com.example.crmsbeta.model.SelectableSubMenuModel;
+import com.example.crmsbeta.model.SubMenuModel;
 import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
 import com.xwray.groupie.ViewHolder;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
-public class SelectableViewHolder extends RecyclerView.ViewHolder {
+import java.util.ArrayList;
+import java.util.List;
+
+public class SelectableViewHolder extends RecyclerView.ViewHolder implements SelectableSubmenuViewHolder.OnSubmenuItemSelectedListener {
 
     SelectableMenuModel mItem;
     private OnItemSelectedListener listener;
@@ -36,6 +41,7 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder {
 
     public SelectableViewHolder(@NonNull View itemView, OnItemSelectedListener listener) {
         super(itemView);
+
         this.listener = listener;
         ctx = itemView.getContext();
 
@@ -49,20 +55,22 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder {
 
     }
 
+    @Override
+    public void onSubMenuItemSelected(SelectableSubMenuModel item) {
+        listener.onSubMenuSelected(item);
+    }
+
     public void bindItem() {
-
-        GroupAdapter adapter = new GroupAdapter();
-        rvSubMenu.setAdapter(adapter);
-        rvSubMenu.setLayoutManager(new LinearLayoutManager(ctx));
-        rvSubMenu.addItemDecoration(new DividerItemDecoration(ctx, LinearLayoutManager.VERTICAL));
-
         if (mItem.getMenuChildren().size() > 0) {
             btnExpand.setVisibility(View.VISIBLE);
             expandedMenu.setVisibility(View.VISIBLE);
-
+            List<SubMenuModel> subMenuModels = new ArrayList<>();
             for (String data : mItem.getMenuChildren()) {
-                adapter.add(new SubMenuItem(data));
+                subMenuModels.add(new SubMenuModel(data));
             }
+            SubmenuNavAdapter submenuNavAdapter = new SubmenuNavAdapter(subMenuModels, this);
+            rvSubMenu.setAdapter(submenuNavAdapter);
+            rvSubMenu.setLayoutManager(new LinearLayoutManager(ctx));
         } else {
             btnExpand.setVisibility(View.GONE);
             expandedMenu.setVisibility(View.GONE);
@@ -94,10 +102,12 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder {
             if (expandedMenu.isExpanded()) {
                 Log.d("tag", "expandable collapse");
                 expandedMenu.collapse();
+                btnExpand.setImageResource(R.drawable.ic_keyboard_arrow_down_white_12dp);
             } else {
                 expandedMenu.setVisibility(View.VISIBLE);
                 Log.d("tag", "expandable expand");
                 expandedMenu.expand();
+                btnExpand.setImageResource(R.drawable.ic_keyboard_arrow_up_white_12dp);
             }
         }
     }
@@ -120,26 +130,7 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder {
 
     public interface OnItemSelectedListener {
         void onItemSelected(SelectableMenuModel item);
-    }
 
-    private class SubMenuItem extends Item {
-
-        String title;
-        TextView tvSubtitle;
-
-        public SubMenuItem(String title) {
-            this.title = title;
-        }
-
-        @Override
-        public void bind(@NonNull ViewHolder viewHolder, int position) {
-            tvSubtitle = viewHolder.itemView.findViewById(R.id.tvSubmenuTitle);
-            tvSubtitle.setText(title);
-        }
-
-        @Override
-        public int getLayout() {
-            return R.layout.layout_simple_text;
-        }
+        void onSubMenuSelected(SelectableSubMenuModel item);
     }
 }

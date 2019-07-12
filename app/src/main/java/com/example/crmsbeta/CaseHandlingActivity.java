@@ -3,6 +3,7 @@ package com.example.crmsbeta;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,6 +28,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.crmsbeta.adapter.MenuNavAdapter;
+import com.example.crmsbeta.adapter.SelectableSubmenuViewHolder;
+import com.example.crmsbeta.adapter.SubmenuNavAdapter;
 import com.example.crmsbeta.fragment.CaseFragment;
 import com.example.crmsbeta.fragment.CaseParticularsFragment;
 import com.example.crmsbeta.fragment.EmptyFragment;
@@ -34,6 +37,7 @@ import com.example.crmsbeta.model.CaseFragmentModel;
 import com.example.crmsbeta.model.MenuModel;
 import com.example.crmsbeta.model.SelectableMenuModel;
 import com.example.crmsbeta.adapter.SelectableViewHolder;
+import com.example.crmsbeta.model.SelectableSubMenuModel;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
@@ -41,7 +45,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CaseHandlingActivity extends AppCompatActivity implements SelectableViewHolder.OnItemSelectedListener {
+public class CaseHandlingActivity extends AppCompatActivity implements SelectableViewHolder.OnItemSelectedListener, SelectableSubmenuViewHolder.OnSubmenuItemSelectedListener {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -198,7 +202,6 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
         menuChildrenOfficeAdmin.add("Maintain Office Code");
         menuChildrenOfficeAdmin.add("Maintain Office Code");
 
-        // fixme : ganti icon dengan yang sesuai
         menuModels.add(new SelectableMenuModel(new MenuModel("CRMS", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
         menuModels.add(new SelectableMenuModel(new MenuModel("Case Handling", emptyList,
@@ -233,7 +236,17 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
 
     @Override
     public void onItemSelected(SelectableMenuModel item) {
+        Log.d("tag", "menu " + item.getMenuTitle());
+    }
 
+    @Override
+    public void onSubMenuItemSelected(SelectableSubMenuModel item) {
+        Log.d("tag", "submenu " + item.getTitle());
+    }
+
+    @Override
+    public void onSubMenuSelected(SelectableSubMenuModel item) {
+        Log.d("tag", "submenu " + item.getTitle());
     }
 
     @Override

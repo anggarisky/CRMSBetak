@@ -62,16 +62,15 @@
             android:id="@+id/expandableMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_16sdp"
             android:background="#748c9d"
-            android:paddingLeft="@dimen/_42sdp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTitleMenu">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvSubMenu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
         </net.cachapa.expandablelayout.ExpandableLayout>
 

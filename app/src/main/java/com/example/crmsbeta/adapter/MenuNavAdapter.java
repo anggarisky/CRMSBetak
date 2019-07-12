@@ -11,24 +11,27 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.crmsbeta.R;
 import com.example.crmsbeta.model.MenuModel;
 import com.example.crmsbeta.model.SelectableMenuModel;
+import com.example.crmsbeta.model.SelectableSubMenuModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MenuNavAdapter extends RecyclerView.Adapter implements SelectableViewHolder.OnItemSelectedListener {
 
-
     private final List<SelectableMenuModel> mValues;
     SelectableViewHolder.OnItemSelectedListener listener;
 
     public MenuNavAdapter(List<MenuModel> menuModels, SelectableViewHolder.OnItemSelectedListener listener) {
         this.listener = listener;
-
         mValues = new ArrayList<>();
-
         for (MenuModel data : menuModels) {
             mValues.add(new SelectableMenuModel(data, false));
         }
+    }
+
+    @Override
+    public void onSubMenuSelected(SelectableSubMenuModel item) {
+        listener.onSubMenuSelected(item);
     }
 
     @NonNull
