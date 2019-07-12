@@ -16,9 +16,9 @@
     tools:showIn="@layout/fragment_case">
 
     <LinearLayout
-        android:layout_marginTop="@dimen/_16sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
         android:orientation="vertical">
 
         // case
@@ -26,9 +26,10 @@
         <include layout="@layout/layout_expand_case" />
 
         <TextView
-            android:layout_marginTop="@dimen/_8sdp"
+            android:id="@+id/lblCommentIssueDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
             android:fontFamily="@font/roboto"
             android:text="Comment Issue Date (DDMMYYYY) *"
             android:textColor="#8a000000"
@@ -63,6 +64,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/lblAttachmentCommentType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_8sdp"
@@ -123,9 +125,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:fontFamily="@font/roboto"
             android:text="* required field"
-            android:layout_marginBottom="@dimen/_10sdp"
             android:textSize="@dimen/_12ssp" />
 
     </LinearLayout>
