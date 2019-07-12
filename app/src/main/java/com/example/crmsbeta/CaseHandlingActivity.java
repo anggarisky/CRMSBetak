@@ -200,7 +200,8 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
 
         List<String> menuChildrenOfficeAdmin = new ArrayList<>();
         menuChildrenOfficeAdmin.add("Maintain Office Code");
-        menuChildrenOfficeAdmin.add("Maintain Office Code");
+        menuChildrenOfficeAdmin.add("Maintain Estate");
+        menuChildrenOfficeAdmin.add("Maintain Block");
 
         menuModels.add(new SelectableMenuModel(new MenuModel("CRMS", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
@@ -215,9 +216,11 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
 
 //        menuModels.add(new SelectableMenuModel(new MenuModel("User Management", emptyList,
 //                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+//
 //        menuModels.add(new SelectableMenuModel(new MenuModel("Business Parameter \n" +
 //                "Maintenance", emptyList,
 //                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+
 //        menuModels.add(new SelectableMenuModel(new MenuModel("System \n" +
 //                "Administration", emptyList,
 //                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
