@@ -39,8 +39,7 @@ public class SubmenuNavAdapter extends RecyclerView.Adapter implements Selectabl
         SelectableSubmenuViewHolder holder = (SelectableSubmenuViewHolder) viewHolder;
         SelectableSubMenuModel selectableSubMenuModel = mValues.get(position);
 
-        holder.mItem = selectableSubMenuModel;
-        holder.bindItem();
+        holder.bindItem(selectableSubMenuModel);
         holder.setChecked(holder.mItem.getSelected());
     }
 

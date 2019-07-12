@@ -31,7 +31,9 @@ public class SelectableSubmenuViewHolder extends RecyclerView.ViewHolder {
         containerSubmenuItem = itemView.findViewById(R.id.containerSubMenuItem);
     }
 
-    public void bindItem() {
+    public void bindItem(SelectableSubMenuModel selectableSubMenuModel) {
+        mItem = selectableSubMenuModel;
+
         containerSubmenuItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

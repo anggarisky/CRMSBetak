@@ -60,7 +60,8 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder implements Sel
         listener.onSubMenuSelected(item);
     }
 
-    public void bindItem(final int pos) {
+    public void bindItem(SelectableMenuModel selectableMenuModel, final int pos) {
+        mItem = selectableMenuModel;
         if (mItem.getMenuChildren().size() > 0) {
             btnExpand.setVisibility(View.VISIBLE);
             expandedMenu.setVisibility(View.VISIBLE);

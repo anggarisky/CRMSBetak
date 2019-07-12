@@ -46,8 +46,7 @@ public class MenuNavAdapter extends RecyclerView.Adapter implements SelectableVi
         SelectableViewHolder holder = (SelectableViewHolder) viewHolder;
         SelectableMenuModel selectableMenuModel = mValues.get(position);
 
-        holder.mItem = selectableMenuModel;
-        holder.bindItem(position);
+        holder.bindItem(selectableMenuModel, position);
         holder.setChecked(holder.mItem.isSelected());
     }
 
@@ -63,8 +62,9 @@ public class MenuNavAdapter extends RecyclerView.Adapter implements SelectableVi
                 selectableMenuModel.setSelected(true);
             }
         }
-//        notifyDataSetChanged();
-        notifyItemChanged(pos);
+        notifyDataSetChanged();
+        Log.d("tag", "notif pos " + pos);
+//        notifyItemChanged(pos);
         listener.onItemSelected(item, pos);
     }
 

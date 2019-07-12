@@ -58,10 +58,6 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
     private RecyclerView rvMenu;
     private MenuNavAdapter rvMenuAdapter;
 
-    private static final int TYPE_MENU_NORMAL = 0;
-    private static final int TYPE_MENU_EXPANDABLE = 1;
-    private List<MenuNavItem> menuNavItems;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -307,59 +303,6 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
                 container.setBackgroundResource(R.drawable.bg_each_tab);
             }
 
-        }
-    }
-
-    static class MyViewHolder extends RecyclerView.ViewHolder {
-
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-        }
-    }
-
-    static class MenuNavItem {
-        boolean isExpand;
-        String title;
-        int selectedIcon;
-        int normalIcon;
-
-        public MenuNavItem(boolean isExpand, String title, int selectedIcon, int normalIcon) {
-            this.isExpand = isExpand;
-            this.title = title;
-            this.selectedIcon = selectedIcon;
-            this.normalIcon = normalIcon;
-        }
-
-        public boolean isExpand() {
-            return isExpand;
-        }
-
-        public void setExpand(boolean expand) {
-            isExpand = expand;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-
-        public void setTitle(String title) {
-            this.title = title;
-        }
-
-        public int getSelectedIcon() {
-            return selectedIcon;
-        }
-
-        public void setSelectedIcon(int selectedIcon) {
-            this.selectedIcon = selectedIcon;
-        }
-
-        public int getNormalIcon() {
-            return normalIcon;
-        }
-
-        public void setNormalIcon(int normalIcon) {
-            this.normalIcon = normalIcon;
         }
     }
 }
