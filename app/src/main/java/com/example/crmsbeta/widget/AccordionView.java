@@ -2,6 +2,7 @@ package com.example.crmsbeta.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+
+import androidx.core.content.ContextCompat;
 
 import com.example.crmsbeta.R;
 
@@ -39,7 +42,6 @@ public class AccordionView extends LinearLayout {
     private Map<Integer, View> sectionByChildId = new HashMap<Integer, View>();
 
     private int[] sectionVisibilities = new int[0];
-
 
     public AccordionView(Context context) {
         super(context);
