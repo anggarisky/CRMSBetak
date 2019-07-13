@@ -210,8 +210,8 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
         menuModels.add(new SelectableMenuModel(new MenuModel("Office Administration", menuChildrenOfficeAdmin,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
 
-//        menuModels.add(new SelectableMenuModel(new MenuModel("User Management", emptyList,
-//                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("User Management", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
 //
 //        menuModels.add(new SelectableMenuModel(new MenuModel("Business Parameter \n" +
 //                "Maintenance", emptyList,
