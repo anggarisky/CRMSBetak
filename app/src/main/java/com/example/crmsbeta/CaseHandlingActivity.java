@@ -240,12 +240,12 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
 
     @Override
     public void onSubMenuItemSelected(SelectableSubMenuModel item) {
-        Log.d("tag", "submenu " + item.getTitle());
+        // todo: gak kepake nih
     }
 
     @Override
     public void onSubMenuSelected(SelectableSubMenuModel item) {
-        Log.d("tag", "submenu " + item.getTitle());
+        Log.d("tag", "menu submenu selected " + item.getTitle());
     }
 
     @Override
