@@ -275,13 +275,13 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
         if (selectedMenu == MENU_CASE_SEARCH) {
             switch (item.getId()) {
                 case 0:
-                    Log.d("tag","sub menu simple search");
+                    Log.d("tag", "sub menu simple search");
                     break;
                 case 1:
-                    Log.d("tag","sub menu adv search");
+                    Log.d("tag", "sub menu adv search");
                     break;
                 case 2:
-                    Log.d("tag","sub menu search result");
+                    Log.d("tag", "sub menu search result");
                     break;
             }
         } else if (selectedMenu == MENU_OFFICE_ADMIN) {

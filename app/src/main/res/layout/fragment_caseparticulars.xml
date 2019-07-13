@@ -18,9 +18,13 @@
 
         <include layout="@layout/accordion_summary_cp" />
 
-        // Case Summary
+        // Case Handling
 
         <include layout="@layout/accordion_handling_cp" />
+
+        // Case Status
+
+        <include layout="@layout/accordion_casestatus_cp" />
 
 
 
