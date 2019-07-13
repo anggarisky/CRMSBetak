@@ -62,9 +62,12 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder implements Sel
 
     public void bindItem(SelectableMenuModel selectableMenuModel, final int pos) {
         mItem = selectableMenuModel;
+
         if (mItem.getMenuChildren().size() > 0) {
+
             btnExpand.setVisibility(View.VISIBLE);
             expandedMenu.setVisibility(View.VISIBLE);
+
             List<SubMenuModel> subMenuModels = new ArrayList<>();
             for (String data : mItem.getMenuChildren()) {
                 subMenuModels.add(new SubMenuModel(data));
@@ -72,51 +75,26 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder implements Sel
             SubmenuNavAdapter submenuNavAdapter = new SubmenuNavAdapter(subMenuModels, this);
             rvSubMenu.setAdapter(submenuNavAdapter);
             rvSubMenu.setLayoutManager(new LinearLayoutManager(ctx));
+
+            if (mItem.isSelected()) {
+                if (!mItem.isExpanded()) {
+                    btnExpand.setImageResource(R.drawable.ic_keyboard_arrow_up_white_12dp);
+                    expandedMenu.expand();
+                    mItem.setExpanded(true);
+                }
+            } else {
+                if (mItem.isExpanded()) {
+                    expandedMenu.collapse();
+                    mItem.setExpanded(false);
+                    btnExpand.setImageResource(R.drawable.ic_keyboard_arrow_down_white_12dp);
+                }
+            }
         } else {
             btnExpand.setVisibility(View.GONE);
             expandedMenu.setVisibility(View.GONE);
         }
 
-        containerMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mItem.isSelected()) {
-                    // deselect
-                    setChecked(false);
-                } else {
-                    // select
-                    setChecked(true);
-                }
-                handleOpenExpand();
-                listener.onItemSelected(mItem, pos);
-            }
-        });
-
-
-        tvTitleMenu.setText(mItem.getMenuTitle());
-    }
-
-    private void handleOpenExpand() {
-        Log.d("tag", "expandable is expanded ? " + expandedMenu.isExpanded());
-
-        if (mItem.getMenuChildren().size() > 0) {
-            if (expandedMenu.isExpanded()) {
-                Log.d("tag", "expandable collapse");
-                expandedMenu.collapse();
-                btnExpand.setImageResource(R.drawable.ic_keyboard_arrow_down_white_12dp);
-            } else {
-                expandedMenu.setVisibility(View.VISIBLE);
-                Log.d("tag", "expandable expand");
-                expandedMenu.expand();
-                btnExpand.setImageResource(R.drawable.ic_keyboard_arrow_up_white_12dp);
-            }
-        }
-    }
-
-
-    public void setChecked(boolean isChecked) {
-        Log.d("tag", "set check " + isChecked);
-        if (isChecked) {
+        if (mItem.isSelected()) {
             lineSelected.setVisibility(View.VISIBLE);
             imgIcon.setImageResource(mItem.getSelectedIcon());
             containerMenu.setBackgroundColor(Color.parseColor("#4d5b65"));
@@ -125,7 +103,17 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder implements Sel
             imgIcon.setImageResource(mItem.getNormalIcon());
             containerMenu.setBackgroundColor(Color.parseColor("#637989"));
         }
-        mItem.setSelected(isChecked);
+
+        containerMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mItem.setSelected(!mItem.isSelected());
+                listener.onItemSelected(mItem, pos);
+            }
+        });
+
+
+        tvTitleMenu.setText(mItem.getMenuTitle());
     }
 
 

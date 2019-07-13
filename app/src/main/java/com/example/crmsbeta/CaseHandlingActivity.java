@@ -200,33 +200,33 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
         menuChildrenOfficeAdmin.add("Maintain Block");
 
         menuModels.add(new SelectableMenuModel(new MenuModel("CRMS", emptyList,
-                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
         menuModels.add(new SelectableMenuModel(new MenuModel("Case Handling", emptyList,
-                R.drawable.icon_statistic_input, R.drawable.icon_case_handling), false));
+                R.drawable.icon_statistic_input, R.drawable.icon_case_handling), false, false));
         menuModels.add(new SelectableMenuModel(new MenuModel("Case Search", menuChildrenCaseSearch,
-                R.drawable.icon_statistic_input, R.drawable.icon_case_search), false));
+                R.drawable.icon_statistic_input, R.drawable.icon_case_search), false, false));
         menuModels.add(new SelectableMenuModel(new MenuModel("Statistic Input", emptyList,
-                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
         menuModels.add(new SelectableMenuModel(new MenuModel("Office Administration", menuChildrenOfficeAdmin,
-                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
 
-//        menuModels.add(new SelectableMenuModel(new MenuModel("User Management", emptyList,
-//                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
-//
-//        menuModels.add(new SelectableMenuModel(new MenuModel("Business Parameter \n" +
-//                "Maintenance", emptyList,
-//                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("User Management", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
 
-//        menuModels.add(new SelectableMenuModel(new MenuModel("System \n" +
-//                "Administration", emptyList,
-//                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
-//        menuModels.add(new SelectableMenuModel(new MenuModel("Handling Guidelines", emptyList,
-//                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
-//        menuModels.add(new SelectableMenuModel(new MenuModel("Report Data \n" +
-//                "Generation", emptyList,
-//                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
-//        menuModels.add(new SelectableMenuModel(new MenuModel("Feedback Corner", emptyList,
-//                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Business Parameter \n" +
+                "Maintenance", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
+
+        menuModels.add(new SelectableMenuModel(new MenuModel("System \n" +
+                "Administration", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Handling Guidelines", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Report Data \n" +
+                "Generation", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
+        menuModels.add(new SelectableMenuModel(new MenuModel("Feedback Corner", emptyList,
+                R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
 
         rvMenuAdapter = new MenuNavAdapter(menuModels, this);
         rvMenu.setAdapter(rvMenuAdapter);
