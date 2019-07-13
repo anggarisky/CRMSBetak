@@ -34,6 +34,11 @@ public class CaseParticularsFragment extends Fragment {
     private TextView priorityTitleSection;
     private TextView caseTypeTitleSection;
     private TextView caseNatureTitleSection;
+    private TextView progressTitleSection;
+
+    private TextView requiredCaseStatus;
+    private TextView requiredCaseHandling;
+    private TextView requiredSummary;
 
     private TextView titleComplaintDate;
     private ImageView btnComplaintDate;
@@ -44,6 +49,14 @@ public class CaseParticularsFragment extends Fragment {
     private ImageView btnCaseNature;
     private TextView titleCaseNature;
     private View caseNatureTrigger;
+
+    private ImageView btnOfficer;
+    private TextView titleOfficer;
+    private View officerTrigger;
+
+    private ImageView btnValidity;
+    private TextView titleValidity;
+    private View validityTrigger;
 
     private ImageView btnPrivacyStatus;
     private TextView titlePrivacyStatus;
@@ -88,6 +101,18 @@ public class CaseParticularsFragment extends Fragment {
         sourceTitleSection = view.findViewById(R.id.sourceTitleSection);
         setSpanBintang(sourceTitleSection);
 
+        requiredCaseStatus = view.findViewById(R.id.requiredCaseStatus);
+        setSpanBintangPertama(requiredCaseStatus);
+
+        requiredCaseHandling = view.findViewById(R.id.requiredCaseHandling);
+        setSpanBintangPertama(requiredCaseHandling);
+
+        requiredSummary = view.findViewById(R.id.requiredSummary);
+        setSpanBintangPertama(requiredSummary);
+
+        progressTitleSection = view.findViewById(R.id.progressTitleSection);
+        setSpanBintang(progressTitleSection);
+
         caseNatureTitleSection = view.findViewById(R.id.caseNatureTitleSection);
         setSpanBintang(caseNatureTitleSection);
 
@@ -106,6 +131,14 @@ public class CaseParticularsFragment extends Fragment {
         btnCaseNature = view.findViewById(R.id.btnCaseNature);
         titleCaseNature = view.findViewById(R.id.titleCaseNature);
         caseNatureTrigger = view.findViewById(R.id.caseNatureTrigger);
+
+        btnValidity = view.findViewById(R.id.btnValidity);
+        titleValidity = view.findViewById(R.id.titleValidity);
+        validityTrigger = view.findViewById(R.id.validityTrigger);
+
+        btnOfficer = view.findViewById(R.id.btnOfficer);
+        titleOfficer = view.findViewById(R.id.titleOfficer);
+        officerTrigger = view.findViewById(R.id.officerTrigger);
 
         btnPrivacyStatus = view.findViewById(R.id.btnPrivacyStatus);
         titlePrivacyStatus = view.findViewById(R.id.titlePrivacyStatus);
@@ -140,6 +173,42 @@ public class CaseParticularsFragment extends Fragment {
 
             }
         });
+
+        btnValidity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu(getActivity(), validityTrigger);
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        titleValidity.setText(menuItem.getTitle());
+                        return false;
+                    }
+                });
+                MenuInflater menuInflater = popupMenu.getMenuInflater();
+                menuInflater.inflate(R.menu.validity_casestatus_options, popupMenu.getMenu());
+                popupMenu.show();
+            }
+        });
+
+
+        btnOfficer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu(getActivity(), officerTrigger);
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        titleOfficer.setText(menuItem.getTitle());
+                        return false;
+                    }
+                });
+                MenuInflater menuInflater = popupMenu.getMenuInflater();
+                menuInflater.inflate(R.menu.officer_casestatus_options, popupMenu.getMenu());
+                popupMenu.show();
+            }
+        });
+
 
         btnCouncil.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -297,6 +366,13 @@ public class CaseParticularsFragment extends Fragment {
         ForegroundColorSpan colorSpan = new ForegroundColorSpan(Color.RED);
         int textLength = tvSpan.getText().length();
         spannableString.setSpan(colorSpan, textLength - 1, textLength, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tvSpan.setText(spannableString);
+    }
+
+    private void setSpanBintangPertama(TextView tvSpan) {
+        SpannableString spannableString = new SpannableString(tvSpan.getText());
+        ForegroundColorSpan colorSpan = new ForegroundColorSpan(Color.RED);
+        spannableString.setSpan(colorSpan, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         tvSpan.setText(spannableString);
     }
 }
