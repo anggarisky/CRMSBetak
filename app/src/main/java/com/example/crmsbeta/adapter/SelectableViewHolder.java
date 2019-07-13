@@ -2,14 +2,12 @@ package com.example.crmsbeta.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,9 +15,6 @@ import com.example.crmsbeta.R;
 import com.example.crmsbeta.model.SelectableMenuModel;
 import com.example.crmsbeta.model.SelectableSubMenuModel;
 import com.example.crmsbeta.model.SubMenuModel;
-import com.xwray.groupie.GroupAdapter;
-import com.xwray.groupie.Item;
-import com.xwray.groupie.ViewHolder;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
