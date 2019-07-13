@@ -3,16 +3,26 @@ package com.example.crmsbeta.model;
 import java.util.List;
 
 public class MenuModel {
+    private int id;
     private String menuTitle;
     private int selectedIcon;
     private int normalIcon;
     private List<String> menuChildren;
 
-    public MenuModel(String menuTitle, List<String> menuChildren, int selectedIcon, int normalIcon) {
+    public MenuModel(int id, String menuTitle, List<String> menuChildren, int selectedIcon, int normalIcon) {
+        this.id = id;
         this.menuTitle = menuTitle;
         this.menuChildren = menuChildren;
         this.selectedIcon = selectedIcon;
         this.normalIcon = normalIcon;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getSelectedIcon() {

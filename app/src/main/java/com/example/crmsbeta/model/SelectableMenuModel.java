@@ -6,7 +6,7 @@ public class SelectableMenuModel extends MenuModel {
     private boolean isExpanded = false;
 
     public SelectableMenuModel(MenuModel menuModel, boolean isSelected, boolean isExpanded) {
-        super(menuModel.getMenuTitle(), menuModel.getMenuChildren(), menuModel.getSelectedIcon(), menuModel.getNormalIcon());
+        super(menuModel.getId(), menuModel.getMenuTitle(), menuModel.getMenuChildren(), menuModel.getSelectedIcon(), menuModel.getNormalIcon());
         this.isSelected = isSelected;
         this.isExpanded = isExpanded;
     }

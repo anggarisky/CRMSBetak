@@ -1,6 +1,7 @@
 package com.example.crmsbeta;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,6 +48,18 @@ import java.util.List;
 
 public class CaseHandlingActivity extends AppCompatActivity implements SelectableViewHolder.OnItemSelectedListener, SelectableSubmenuViewHolder.OnSubmenuItemSelectedListener {
 
+    private static final int MENU_CRMS = 1;
+    private static final int MENU_CASE_HANDLING = 2;
+    private static final int MENU_CASE_SEARCH = 3;
+    private static final int MENU_STATISTIC_INPUT = 4;
+    private static final int MENU_OFFICE_ADMIN = 5;
+    private static final int MENU_USER_MANAGEMENT = 6;
+    private static final int MENU_BUSSINESS_PARAMETER = 7;
+    private static final int MENU_SYSTEM_ADMIN = 8;
+    private static final int MENU_HANDLING_GUIDE = 9;
+    private static final int MENU_REPORT_DATA = 10;
+    private static final int MENU_FEEDBACK_CORNER = 11;
+
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private CaseHandlingAdapter caseHandlingAdapter;
@@ -57,6 +70,7 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
     private ActionBarDrawerToggle toggle;
     private RecyclerView rvMenu;
     private MenuNavAdapter rvMenuAdapter;
+    private int selectedMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,33 +213,35 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
         menuChildrenOfficeAdmin.add("Maintain Estate");
         menuChildrenOfficeAdmin.add("Maintain Block");
 
-        menuModels.add(new SelectableMenuModel(new MenuModel("CRMS", emptyList,
+        menuModels.add(new SelectableMenuModel(new MenuModel(MENU_CRMS, "CRMS", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
-        menuModels.add(new SelectableMenuModel(new MenuModel("Case Handling", emptyList,
+        menuModels.add(new SelectableMenuModel(new MenuModel(MENU_CASE_HANDLING, "Case Handling", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_case_handling), false, false));
-        menuModels.add(new SelectableMenuModel(new MenuModel("Case Search", menuChildrenCaseSearch,
+
+        menuModels.add(new SelectableMenuModel(new MenuModel(MENU_CASE_SEARCH, "Case Search", menuChildrenCaseSearch,
                 R.drawable.icon_statistic_input, R.drawable.icon_case_search), false, false));
-        menuModels.add(new SelectableMenuModel(new MenuModel("Statistic Input", emptyList,
+
+        menuModels.add(new SelectableMenuModel(new MenuModel(MENU_STATISTIC_INPUT, "Statistic Input", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
-        menuModels.add(new SelectableMenuModel(new MenuModel("Office Administration", menuChildrenOfficeAdmin,
+        menuModels.add(new SelectableMenuModel(new MenuModel(MENU_OFFICE_ADMIN, "Office Administration", menuChildrenOfficeAdmin,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
 
-        menuModels.add(new SelectableMenuModel(new MenuModel("User Management", emptyList,
+        menuModels.add(new SelectableMenuModel(new MenuModel(MENU_USER_MANAGEMENT, "User Management", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
 
-        menuModels.add(new SelectableMenuModel(new MenuModel("Business Parameter \n" +
+        menuModels.add(new SelectableMenuModel(new MenuModel(MENU_BUSSINESS_PARAMETER, "Business Parameter \n" +
                 "Maintenance", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
 
-        menuModels.add(new SelectableMenuModel(new MenuModel("System \n" +
+        menuModels.add(new SelectableMenuModel(new MenuModel(MENU_SYSTEM_ADMIN, "System \n" +
                 "Administration", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
-        menuModels.add(new SelectableMenuModel(new MenuModel("Handling Guidelines", emptyList,
+        menuModels.add(new SelectableMenuModel(new MenuModel(MENU_HANDLING_GUIDE, "Handling Guidelines", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
-        menuModels.add(new SelectableMenuModel(new MenuModel("Report Data \n" +
+        menuModels.add(new SelectableMenuModel(new MenuModel(MENU_REPORT_DATA, "Report Data \n" +
                 "Generation", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
-        menuModels.add(new SelectableMenuModel(new MenuModel("Feedback Corner", emptyList,
+        menuModels.add(new SelectableMenuModel(new MenuModel(MENU_FEEDBACK_CORNER, "Feedback Corner", emptyList,
                 R.drawable.icon_statistic_input, R.drawable.icon_statistic_input), false, false));
 
         rvMenuAdapter = new MenuNavAdapter(menuModels, this);
@@ -235,17 +251,49 @@ public class CaseHandlingActivity extends AppCompatActivity implements Selectabl
 
     @Override
     public void onItemSelected(SelectableMenuModel item, int pos) {
-        Log.d("tag", "menu " + item.getMenuTitle());
+        Log.d("tag", "menu " + item.getMenuTitle() + "id " + item.getId());
+        selectedMenu = item.getId();
+        switch (item.getId()) {
+            case MENU_CRMS:
+                break;
+            case MENU_CASE_HANDLING:
+                startActivity(new Intent(this, EmptyActivity.class));
+                break;
+        }
     }
 
     @Override
     public void onSubMenuItemSelected(SelectableSubMenuModel item) {
         // todo: gak kepake nih
+
     }
 
     @Override
     public void onSubMenuSelected(SelectableSubMenuModel item) {
-        Log.d("tag", "menu submenu selected " + item.getTitle());
+        Log.d("tag", "menu submenu selected " + item.getTitle() + " id " + item.getId());
+
+        if (selectedMenu == MENU_CASE_SEARCH) {
+            switch (item.getId()) {
+                case 0:
+                    Log.d("tag","sub menu simple search");
+                    break;
+                case 1:
+                    Log.d("tag","sub menu adv search");
+                    break;
+                case 2:
+                    Log.d("tag","sub menu search result");
+                    break;
+            }
+        } else if (selectedMenu == MENU_OFFICE_ADMIN) {
+            switch (item.getId()) {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
+        }
     }
 
     @Override

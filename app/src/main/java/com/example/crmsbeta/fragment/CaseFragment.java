@@ -47,6 +47,7 @@ public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSet
     private ExpandableLayout expandableLayout2;
     private TextView tvDate;
     private TextView lblCommentIssueDate;
+    private TextView lblRequiredField;
     private TextView lblAttachmentCommentType;
     private TextView tvTitlePopupMenu;
     private Calendar calendar;
@@ -76,6 +77,7 @@ public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSet
         tvTitlePopupMenu = view.findViewById(R.id.tvTitlePopupMenu);
         btnAttachmentCommentType = view.findViewById(R.id.btnAttachmentCommentType);
         lblAttachmentCommentType = view.findViewById(R.id.lblAttachmentCommentType);
+        lblRequiredField = view.findViewById(R.id.lblRequiredField);
         lblCommentIssueDate = view.findViewById(R.id.lblCommentIssueDate);
         containerAttachmentCommentType = view.findViewById(R.id.containerAttachmentCommentType);
         btnExpand = view.findViewById(R.id.btnExpand);
@@ -85,6 +87,7 @@ public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSet
 
         setSpanBintang(lblAttachmentCommentType);
         setSpanBintang(lblCommentIssueDate);
+        setSpanBintangPertama(lblRequiredField);
 
         final Drawable imgUp = ContextCompat.getDrawable(getActivity(), R.drawable.arrow_up_expandable);
         final Drawable imgDown = ContextCompat.getDrawable(getActivity(), R.drawable.arrow_down_expandable);
@@ -138,6 +141,13 @@ public class CaseFragment extends Fragment implements DatePickerDialog.OnDateSet
                 popupMenu.show();
             }
         });
+    }
+
+    private void setSpanBintangPertama(TextView tvSpan) {
+        SpannableString spannableString = new SpannableString(tvSpan.getText());
+        ForegroundColorSpan colorSpan = new ForegroundColorSpan(Color.RED);
+        spannableString.setSpan(colorSpan, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tvSpan.setText(spannableString);
     }
 
     private void setSpanBintang(TextView tvSpan) {

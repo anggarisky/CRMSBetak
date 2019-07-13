@@ -69,9 +69,11 @@ public class SelectableViewHolder extends RecyclerView.ViewHolder implements Sel
             expandedMenu.setVisibility(View.VISIBLE);
 
             List<SubMenuModel> subMenuModels = new ArrayList<>();
-            for (String data : mItem.getMenuChildren()) {
-                subMenuModels.add(new SubMenuModel(data));
+
+            for (int i = 0; i < mItem.getMenuChildren().size(); i++) {
+                subMenuModels.add(new SubMenuModel(i, mItem.getMenuChildren().get(i)));
             }
+
             SubmenuNavAdapter submenuNavAdapter = new SubmenuNavAdapter(subMenuModels, this);
             rvSubMenu.setAdapter(submenuNavAdapter);
             rvSubMenu.setLayoutManager(new LinearLayoutManager(ctx));

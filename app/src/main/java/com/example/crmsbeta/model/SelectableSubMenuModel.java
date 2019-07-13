@@ -5,7 +5,7 @@ public class SelectableSubMenuModel extends SubMenuModel {
     private Boolean isSelected;
 
     public SelectableSubMenuModel(SubMenuModel subMenuModel, boolean isSelected) {
-        super(subMenuModel.getTitle());
+        super(subMenuModel.getId(), subMenuModel.getTitle());
         this.isSelected = isSelected;
     }
 
